@@ -55,4 +55,19 @@ CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 
 ```sh
 docker build -t  backend-flask ./backend-flask
+docker build -t  backend-flask:latest ./backend-flask
 ```
+
+### Run Container
+
+Run 
+```sh
+docker run --rm -p 4567:4567 -it backend-flask
+Set Enviroment variables
+FRONTEND_URL="*" BACKEND_URL="*" docker run --rm -p 4567:4567 -it backend-flask
+export FRONTEND_URL="*"
+export BACKEND_URL="*"
+docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask
+docker run --rm -p 4567:4567 -it  -e FRONTEND_URL -e BACKEND_URL backend-flask
+unset FRONTEND_URL="*"
+unset BACKEND_URL="*"
