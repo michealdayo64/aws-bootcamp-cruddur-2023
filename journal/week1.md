@@ -184,6 +184,11 @@ To install the postgres client into Gitpod
       sudo apt install -y postgresql-client-13 libpq-dev
 ```
 
+To run postgres on docker host
+```
+psql -U["POSTGRES_USER"] --host localhost
+Note: The command above prompt you to enter password you created
+```
 ### DynamoDB Local
 
 ```yaml
